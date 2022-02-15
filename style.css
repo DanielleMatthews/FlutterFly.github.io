@@ -1,0 +1,78 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+#game{
+    width: 850px;
+    height: 600px;
+    border: 1px solid black;
+    margin: auto;
+    overflow: hidden;
+    background-image: url("images/bgrs.jpg");
+}
+#block1{
+    width: 99px;
+    height: 250px;
+    background-image: url("images/topthrns.jpg");
+    position: relative;
+    left: 850px;
+    animation: block 6s infinite linear;
+}
+#block2{
+    width:99px;
+    height: 250px;
+    background-image: url("images/botthrns.jpg");
+    position: relative;
+    left: 850px;
+    top: 100px;
+    animation: block 6s infinite linear;
+}
+
+@keyframes block{
+    0%{left:850px}
+    100%{left:-50px} 
+}
+/* #gap{
+    width: 50px;
+    height: 150px;
+    background-color: aquamarine;
+    position: relative;
+    left: 400px;
+    top: -500px;
+    animation: block 2s infinite linear;
+} */
+/* body{
+    background-color: rgb(102, 60, 99);
+}
+#bg{
+    border-color: black;
+    border-width: 25px;
+    border-style: solid;
+    width: 850px;
+    height: 600px;
+    position: relative;
+    top: 45px;
+    margin: auto;
+}
+#avatar{
+    width: 80px;
+    height: 60px;
+    position: relative;
+    top: -180px;
+    left: 45px;
+}
+#tthorn{
+    width: 99px;
+    height: 250px;
+    position: relative;
+    left: 700px;
+    top: -644px;
+    animation-timing-function: tthorndiv 1s infinite linear;
+}
+#bthorn{
+    width: 99px;
+    height: 250px;
+    position: relative;
+    left: 700px;
+    top: -548px;
+}/*
