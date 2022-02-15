@@ -13,14 +13,14 @@ body{
     overflow: hidden;
     background-image: url("images/newbg.jpg");
 }
-#block1{
+.topt{
     width: 99px;
     height: 250px;
     background-image: url("images/topthrns.jpg");
-    position: relative;
+    position: absolute;
     left: 850px;
     top: 0px;
-    animation: block 6s infinite linear; 
+    /* animation: block 6s infinite linear;  */
 }
 #block2{
     width:99px;
@@ -41,7 +41,7 @@ body{
     height:75px;
     background-image: url(images/teal.png);
     position: absolute;
-    top: 85px;
+    bottom: 405px;
     left: 400px; 
 }
 /* #gap{
