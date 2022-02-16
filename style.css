@@ -17,7 +17,7 @@ body{
 
 /* #fgbot{} */
 
-.topt{
+#block1{
     width: 132px;
     height: 425px;
     background-image: url("images/longthorns.png");
@@ -26,16 +26,7 @@ body{
     top: -175px;
     animation: block 6s infinite linear; 
 }
-.top2{
-    width: 132px;
-    height: 425px;
-    background-image: url("images/longthorns.png");
-    position: relative;
-    left: 850px;
-    top: -175px;
-    animation: block 12s infinite linear;
-    animation-delay: 4s; 
-}
+
 #block2{
     width:132px;
     height: 425px;
