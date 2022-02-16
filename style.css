@@ -33,7 +33,8 @@ body{
     position: relative;
     left: 850px;
     top: -175px;
-    animation: block 12s infinite linear; 
+    animation: block 12s infinite linear;
+    animation-delay: 4s; 
 }
 #block2{
     width:132px;
@@ -52,7 +53,7 @@ body{
 #avatar{
     width:76px;
     height:50px;
-    background-image: url(images/tealrs.png);
+    background-image: url("images/tealrs.png");
     position: absolute;
     bottom: 405px;
     left: 400px; 

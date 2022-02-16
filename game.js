@@ -10,23 +10,35 @@ var top1 = (rdmThorns*100); //random num b/w 0-300 + height of thorns
 var top3 = (rdmThorns*100);
 var avLeft = 400;
 var avBot = 405;
-let grav = 2;
+let grav = 2.4;
 let thL = 850;
 
 function start(){
     avBot -= grav;
     if(avBot <= 100){
-        grav =0;
-        
+        grav = 0;
+        gameOver();
     }
+    if(avBot > (-top1 +425)){
+        gameOver();
+    }
+    // if(thL > 400 && thL < 476 && avLeft === 476) {//&& avBot+50 >= top1+425)
+    //     gameOver();
+    // }
     avatar.style.bottom = avBot + "px";
     avatar.style.left = avLeft + "px";
+    
+    //const running = block1.style.animationPlayState || 'running';
+    //block1.style.animationPlayState = 'running'
+    //block2.style.animationPlayState = 'running'
 }
 let timerId = setInterval(start, 20)
 
-block3.addEventListener('animationiteration', () => {
-    block1.style.top = -(top3) + "px"; 
-});
+//block1.style.animationPlayState = 'paused'
+// block3.style.animationDelay
+// block3.addEventListener('animationiteration', () => {
+//     block1.style.top = -(top3) + "px"; 
+// });
 
 block1.addEventListener('animationiteration', () => {
     block1.style.top = -(top1) + "px"; 
@@ -74,19 +86,19 @@ function fly(){
 document.addEventListener('keydown', fly)
 
 // function genThorns(){
-//     let thL = 1250;
-//     let thBot = -350;
+    //     let thL = 1250;
+    //     let thBot = -350;
 //     const thorns = document.createElement("div");
 //     thorns.classList.add('topt')
 //     game.appendChild(thorns);
 //     topt.style.left = thL + "px";
 //     topt.style.bottom = thBot + "px";
-    
+
     // function moveThorns(){
-    //     thL -=2
+        //     thL -=2
     //     topt.style.left = thL + "px"
     //     if(thL === -99){
-    //         clearInterval(timerId)
+        //         clearInterval(timerId)
     //         game.removeChild(thorns)
     //     }
     // }
@@ -99,4 +111,14 @@ document.addEventListener('keydown', fly)
 
 // block1.addEventListener('animationiteration', () => {
    // block1.style.top = -(top1) + "px";
-// });
+   // });
+const running = block1.style.animationPlayState || 'running';
+const running1 = block2.style.animationPlayState || 'running';
+function gameOver(){
+    block1.style.animationPlayState = running === 'running' ? 'paused' : 'running';
+    block2.style.animationPlayState = running1 === 'running' ? 'paused' : 'running';
+
+    console.log("GAMEOVER")
+    //display count
+    //option for replay
+}
