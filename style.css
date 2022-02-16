@@ -8,28 +8,41 @@ body{
 #game{
     width: 850px;
     height: 600px;
-    border: 1px solid black;
-    margin: auto;
+    border: 12px solid black;
+    margin-top: 50px;
+    margin-left: 10px;
     overflow: hidden;
-    background-image: url("images/newbg.jpg");
+    background-image: url("images/newbg1.png");
 }
+
+/* #fgbot{} */
+
 .topt{
-    width: 99px;
-    height: 250px;
-    background-image: url("images/topthrns.jpg");
-    position: absolute;
-    left: 850px;
-    top: 0px;
-    /* animation: block 6s infinite linear;  */
-}
-#block2{
-    width:99px;
-    height: 250px;
-    background-image: url("images/botthrns.jpg");
+    width: 132px;
+    height: 425px;
+    background-image: url("images/longthorns.png");
     position: relative;
     left: 850px;
-    top: 100px;
-    animation: block 6s infinite linear;
+    top: -175px;
+    animation: block 6s infinite linear; 
+}
+.top2{
+    width: 132px;
+    height: 425px;
+    background-image: url("images/longthorns.png");
+    position: relative;
+    left: 850px;
+    top: -175px;
+    animation: block 12s infinite linear; 
+}
+#block2{
+    width:132px;
+    height: 425px;
+    background-image: url("images/longthorns.png");
+    position: relative;
+    left: 850px;
+    top: -75px;
+    animation: block 6s infinite linear; 
 }
 
 @keyframes block{
@@ -37,9 +50,9 @@ body{
     100%{left:-50px} 
 }
 #avatar{
-    width:113px;
-    height:75px;
-    background-image: url(images/teal.png);
+    width:76px;
+    height:50px;
+    background-image: url(images/tealrs.png);
     position: absolute;
     bottom: 405px;
     left: 400px; 
