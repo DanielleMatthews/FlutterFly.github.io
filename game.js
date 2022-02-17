@@ -6,7 +6,7 @@ var bott = document.getElementsByClassName("bott")
 var avatar = document.getElementById("avatar");
 var game = document.getElementById("game")
 var rdmThorns = Math.random()*2;  //random numb b/w 0-3
-// var top1 = (rdmThorns*100); //random num b/w 0-300 + height of thorns
+//var random = (rdmThorns*100); //random num b/w 0-300 + height of thorns
 // var top3 = (rdmThorns*100);
 var top1 = -175
 var avTop = 355;
@@ -14,9 +14,9 @@ var avBot = 405;
 var avLeft = 400;
 var avRight = 476;
 var grav = 1.5;
-var thL = 850;
-var thtB = 200;
-var thbT = 25;
+var thL = 850; //left pos of thorns, top and bottom
+var botOfTopThrns = 200;
+var topOfBotThrns = 25;
 let collision = false;
 
 const running = block1.style.animationPlayState || 'running';
@@ -27,41 +27,28 @@ function start(){
     if(collision == false){
         avBot -= grav;
         avTop += grav;
-        // if(avBot < (-top1 +425) && (thL >400) && (thL <479)){
-        //     grav = 0;
-        //     gameOver();
-        // } more math? && (avTop<= thtB) || (avRight >= thL+15) && (avBot<= thbT) )
-        // while(avBot>= thbT || avTop <= thtB){
-        // }
         
-        if(avRight >= thL+15 && avTop <= thtB+25 ||avRight >= thL+15 && avBot <= thbT+260 ){   
+        if(avRight >= thL+15 && avTop <= botOfTopThrns +25 ||avRight >= thL+15 && avBot <= topOfBotThrns +260 ){   
             grav = 0;
             gameOver();
         }
-        // if(avTop <= thtB){ //if top of av greater than bottom of top thrns
-        //     grav = 0;
-        //     gameOver();
-        // } 
-        // if(avBot <= thbT){ //if bot of av less than top of bot thrns
-        //     grav = 0;
-        //     gameOver();
-        // }
-        else if (avBot <= 25){
-            grav = 0;
-            gameOver();
+            else if (avBot <= 25){
+                grav = 0;
+                gameOver();
+            }
+        else{ 
+            //add count
         }
+
         avatar.style.bottom = avBot + "px";
         avatar.style.left = avLeft + "px"; 
         avatar.style.right = avRight + "px"; 
         avatar.style.top = avTop+ "px";
         block2.style.left = thL + "px";
-        block1.style.bottom = thtB + "px";
-        block2.style.top = thbT + "px";
+        block1.style.bottom = botOfTopThrns + "px";
+        block2.style.top = topOfBotThrns + "px";
         updateThL(thL);
     }
-    // if(thL > 400 && thL < 476 && avLeft === 476) {//&& avBot+50 >= top1+425)
-    //     gameOver();
-   
 }
 let timerId = setInterval(start, 20)
 
@@ -89,9 +76,9 @@ function fly(){
         avTop -= 30;
         avatar.style.bottom = avBot + "px";
         console.log("avBot " + avBot)
-        console.log("thbT " + thbT)
+        console.log("top of bot thrns " + topOfBotThrns)
         console.log("avTop " + avTop)
-        console.log("thtB " + thtB)
+        console.log("bot of top thrns " + botOfTopThrns)
         //console.log(thbT + " thornsbot Top")
     };
 }
@@ -156,3 +143,15 @@ function gameOver(){
                             // block1.addEventListener('animationiteration', () => {
                                // block1.style.top = -(top1) + "px";
                                // });
+                                 // if(avBot < (-top1 +425) && (thL >400) && (thL <479)){
+        //     grav = 0;
+        //     gameOver();
+        // } more math? && (avTop<= thtB) || (avRight >= thL+15) && (avBot<= thbT) )
+        // while(avBot>= thbT || avTop <= thtB){
+        // } && avLeft <= thL+147
+          // if(avBot < (-top1 +425) && (thL >400) && (thL <479)){
+        //     grav = 0;
+        //     gameOver();
+        // } more math? && (avTop<= thtB) || (avRight >= thL+15) && (avBot<= thbT) )
+        // while(avBot>= thbT || avTop <= thtB){
+        // } && avLeft <= thL+147
