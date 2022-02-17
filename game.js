@@ -34,7 +34,7 @@ function start(){
         // while(avBot>= thbT || avTop <= thtB){
         // }
         
-        if(avRight >= thL+15){   
+        if(avRight >= thL+15 && avTop <= thtB+25 ||avRight >= thL+15 && avBot <= thbT+260 ){   
             grav = 0;
             gameOver();
         }
@@ -88,10 +88,10 @@ function fly(){
         avBot += 30;
         avTop -= 30;
         avatar.style.bottom = avBot + "px";
-        console.log("avBot " + avBot  )
-        console.log("thbT " + thbT )
-        // console.log("avTop " + avTop  )
-        // console.log("thtB " + thtB )
+        console.log("avBot " + avBot)
+        console.log("thbT " + thbT)
+        console.log("avTop " + avTop)
+        console.log("thtB " + thtB)
         //console.log(thbT + " thornsbot Top")
     };
 }
