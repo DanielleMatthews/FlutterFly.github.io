@@ -23,7 +23,7 @@ body{
     background-image: url("images/longthorns.png");
     position: relative;
     left: 850px;
-    top: -175px;
+    top: -250px; 
     animation: block 6s infinite linear; 
 }
 
@@ -46,7 +46,7 @@ body{
     height:50px;
     background-image: url("images/tealrs.png");
     position: absolute;
-    bottom: 405px;
+    bottom: 600px;
     left: 400px; 
 }
 /* #gap{
