@@ -19,10 +19,7 @@ var smV = 267;
 var lgV = 533;
 const running = block1.style.animationPlayState || 'running';
 const running1 = block2.style.animationPlayState || 'running';
-console.log(thL)
-// console.log(updateSmV)
-// console.log(updateLgV)
-console.log(updateThL())
+
 function start(){
     if(collision == false){
         avBot -= grav;
@@ -67,21 +64,14 @@ block2.addEventListener('animationiteration', () => {
 
 function updateSmV(){
     smV -= 2.83;
-    // if(thL = 0);
-    //     smV + smV;
-};
+}
+
 function updateLgV(){
     lgV -= 2.83;
-    // if(thL = 0){
-    //     lgV + lgV;
-    // }
-};
+}
+
 function updateThL(){
     thL -= 2.83;
-    // if(thL = 0){
-    //     thL + thL;
-    // }
-   
 }
 
 function control(e){
@@ -94,16 +84,7 @@ function fly(){
         avBot += 30;
         avTop -= 30;
         avatar.style.bottom = avBot + "px";
-        // console.log("avBot " + avBot)
-        // console.log("top of bot thrns " + topOfBotThrns)
-        // console.log("avTop " + avTop)
-        // console.log("bot of top thrns " + botOfTopThrns)
-        //console.log(thbT + " thornsbot Top")
-        console.log("av right" + avRight )
-        console.log(smV)
-        console.log(lgV)
-        console.log("thorns left" +thL )
-    };
+    }
 }
 document.addEventListener('keydown', fly)
 
