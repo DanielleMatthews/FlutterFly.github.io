@@ -1,8 +1,5 @@
 var block1 = document.getElementById("block1");
 var block2 = document.getElementById("block2");
-var block3 = document.getElementById("block3");
-var topt = document.getElementsByClassName("topt")
-var bott = document.getElementsByClassName("bott")
 var avatar = document.getElementById("avatar");
 var game = document.getElementById("game")
 var rdmThorns = Math.random()*2;  //random numb b/w 0-3
@@ -16,7 +13,7 @@ var avRight = 476;
 var grav = 1.5;
 var thL = 850; //left pos of thorns, top and bottom
 var botOfTopThrns = 200;
-var topOfBotThrns = 25;
+var topOfBotThrns = -150;
 let collision = false;
 var smV = 267;
 var lgV = 533;
@@ -31,7 +28,7 @@ function start(){
         avBot -= grav;
         avTop += grav;
     
-        if((smV< thL <lgV) && (avRight >= thL) && (avTop <= botOfTopThrns +25) ||(smV< thL <lgV) && (avRight >= thL+15) && avBot <= topOfBotThrns +260 ){   
+        if((smV< thL <lgV) && (avRight >= thL+20) && (avTop <= botOfTopThrns+30) ||(smV< thL <lgV) && (avRight >= thL+20) && avBot <= topOfBotThrns +615 ){   
             grav = 0;
             gameOver();
             collision == true;
@@ -39,9 +36,10 @@ function start(){
             else if (avBot <= 155){
             grav = 0;
             gameOver();
-            collision = true;
+            collision == true;
             }
         else{ 
+            collision == false;
             //add count
         }
 
@@ -69,20 +67,20 @@ block2.addEventListener('animationiteration', () => {
 
 function updateSmV(){
     smV -= 2.83;
-    if(thL = 0);
-        smV + smV;
+    // if(thL = 0);
+    //     smV + smV;
 };
 function updateLgV(){
     lgV -= 2.83;
-    if(thL = 0){
-        lgV + lgV;
-    }
+    // if(thL = 0){
+    //     lgV + lgV;
+    // }
 };
 function updateThL(){
     thL -= 2.83;
-    if(thL = 0){
-        thL + thL;
-    }
+    // if(thL = 0){
+    //     thL + thL;
+    // }
    
 }
 

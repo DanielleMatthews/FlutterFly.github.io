@@ -47,3 +47,36 @@ body{
     bottom: 600px;
     left: 400px; 
 }
+#gameInfo{
+    width: 525px;
+    height: 600px;
+    position: absolute;
+    top: 60px;
+    right: 40px;
+    background-color: rgb(130, 82, 143);
+}
+#score{
+    font-size: 25px; font-weight: bold;
+    letter-spacing: .5em;
+    position: absolute;
+    top: 225px;
+    right: 350px;
+}
+#title{
+    font-size: 42px; font-weight: bold;
+    letter-spacing: .3em;
+    position:absolute;
+    top: 25px;
+    right: 115px;
+}
+.btn{
+    position: absolute;
+    top:355px;
+    right: 169px;
+    background-color: palevioletred;
+    width: 175px;
+    height: 75px;
+    font-size: larger;
+    font-weight: bolder;
+    letter-spacing: .2em;
+}
