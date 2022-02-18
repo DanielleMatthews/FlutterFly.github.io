@@ -30,16 +30,16 @@ function start(){
     if(collision == false){
         avBot -= grav;
         avTop += grav;
-        
-        if((smV< thL <lgV) && (avRight >= thL+15) && (avTop <= botOfTopThrns +25) ||(smV< thL <lgV) && (avRight >= thL+15) && avBot <= topOfBotThrns +260 ){   
+    
+        if((smV< thL <lgV) && (avRight >= thL) && (avTop <= botOfTopThrns +25) ||(smV< thL <lgV) && (avRight >= thL+15) && avBot <= topOfBotThrns +260 ){   
             grav = 0;
             gameOver();
             collision == true;
         }
             else if (avBot <= 155){
-                grav = 0;
-                gameOver();
-                collision = true;
+            grav = 0;
+            gameOver();
+            collision = true;
             }
         else{ 
             //add count
@@ -49,7 +49,7 @@ function start(){
         avatar.style.left = avLeft + "px"; 
         avatar.style.right = avRight + "px"; 
         avatar.style.top = avTop+ "px";
-        //block2.style.left = thL + "px";
+        block2.style.left = thL + "px";
         block1.style.bottom = botOfTopThrns + "px";
         block2.style.top = topOfBotThrns + "px";
         updateThL();
@@ -69,13 +69,21 @@ block2.addEventListener('animationiteration', () => {
 
 function updateSmV(){
     smV -= 2.83;
+    if(thL = 0);
+        smV + smV;
 };
 function updateLgV(){
     lgV -= 2.83;
+    if(thL = 0){
+        lgV + lgV;
+    }
 };
 function updateThL(){
     thL -= 2.83;
-    //return x-=2.83;
+    if(thL = 0){
+        thL + thL;
+    }
+   
 }
 
 function control(e){
@@ -112,42 +120,3 @@ function gameOver(){
 }
    
                           
-                            // function genThorns(){
-                                //     let thL = 1250;
-                                //     let thBot = -350;
-                            //     const thorns = document.createElement("div");
-                            //     thorns.classList.add('topt')
-                            //     game.appendChild(thorns);
-                            //     topt.style.left = thL + "px";
-                            //     topt.style.bottom = thBot + "px";
-                            
-                            // function moveThorns(){
-                                //     thL -=2
-                                //     topt.style.left = thbL + "px"
-                                //     if(thbL === -99){
-                                //             clearInterval(timerId)
-                                //         game.removeChild(thorns)
-                                //     }
-                                // }
-                                // let timerId = setInterval(moveThorns, 20)
-                                // setTimeout(genThorns, 2000)
-                            // }   
-                            // genThorns();
-                            
-                            
-                            
-                            // block1.addEventListener('animationiteration', () => {
-                               // block1.style.top = -(top1) + "px";
-                               // });
-                                 // if(avBot < (-top1 +425) && (thL >400) && (thL <479)){
-        //     grav = 0;
-        //     gameOver();
-        // } more math? && (avTop<= thtB) || (avRight >= thL+15) && (avBot<= thbT) )
-        // while(avBot>= thbT || avTop <= thtB){
-        // } && avLeft <= thL+147
-          // if(avBot < (-top1 +425) && (thL >400) && (thL <479)){
-        //     grav = 0;
-        //     gameOver();
-        // } more math? && (avTop<= thtB) || (avRight >= thL+15) && (avBot<= thbT) )
-        // while(avBot>= thbT || avTop <= thtB){
-        // } && avLeft <= thL+147
