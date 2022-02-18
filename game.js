@@ -18,23 +18,28 @@ var thL = 850; //left pos of thorns, top and bottom
 var botOfTopThrns = 200;
 var topOfBotThrns = 25;
 let collision = false;
-
+var smV = 267;
+var lgV = 533;
 const running = block1.style.animationPlayState || 'running';
 const running1 = block2.style.animationPlayState || 'running';
 console.log(thL)
-console.log(updateThL(thL))
+// console.log(updateSmV)
+// console.log(updateLgV)
+console.log(updateThL())
 function start(){
     if(collision == false){
         avBot -= grav;
         avTop += grav;
         
-        if(avRight >= thL+15 && avTop <= botOfTopThrns +25 ||avRight >= thL+15 && avBot <= topOfBotThrns +260 ){   
+        if((smV< thL <lgV) && (avRight >= thL+15) && (avTop <= botOfTopThrns +25) ||(smV< thL <lgV) && (avRight >= thL+15) && avBot <= topOfBotThrns +260 ){   
             grav = 0;
             gameOver();
+            collision == true;
         }
-            else if (avBot <= 25){
+            else if (avBot <= 155){
                 grav = 0;
                 gameOver();
+                collision = true;
             }
         else{ 
             //add count
@@ -44,10 +49,12 @@ function start(){
         avatar.style.left = avLeft + "px"; 
         avatar.style.right = avRight + "px"; 
         avatar.style.top = avTop+ "px";
-        block2.style.left = thL + "px";
+        //block2.style.left = thL + "px";
         block1.style.bottom = botOfTopThrns + "px";
         block2.style.top = topOfBotThrns + "px";
-        updateThL(thL);
+        updateThL();
+        updateSmV();
+        updateLgV();
     }
 }
 let timerId = setInterval(start, 20)
@@ -60,6 +67,12 @@ block2.addEventListener('animationiteration', () => {
     block2.style.top = (100 -top1) + "px"; 
 });
 
+function updateSmV(){
+    smV -= 2.83;
+};
+function updateLgV(){
+    lgV -= 2.83;
+};
 function updateThL(){
     thL -= 2.83;
     //return x-=2.83;
@@ -75,11 +88,15 @@ function fly(){
         avBot += 30;
         avTop -= 30;
         avatar.style.bottom = avBot + "px";
-        console.log("avBot " + avBot)
-        console.log("top of bot thrns " + topOfBotThrns)
-        console.log("avTop " + avTop)
-        console.log("bot of top thrns " + botOfTopThrns)
+        // console.log("avBot " + avBot)
+        // console.log("top of bot thrns " + topOfBotThrns)
+        // console.log("avTop " + avTop)
+        // console.log("bot of top thrns " + botOfTopThrns)
         //console.log(thbT + " thornsbot Top")
+        console.log("av right" + avRight )
+        console.log(smV)
+        console.log(lgV)
+        console.log("thorns left" +thL )
     };
 }
 document.addEventListener('keydown', fly)
@@ -93,29 +110,8 @@ function gameOver(){
     //display count
     //option for replay
 }
-    // setInterval (function(){
-        //     var avatarTop = parseInt(window.getComputedStyle(avatar).getPropertyValue("top"));
-        //     if(flying==0){
-            //         avatar.style.top = (avatarTop+3)+"px";
-            //     }
-            // }, 1000)
-            // function fly(){
-                //     flying = 1;
-                //     let flyCnt = 0;
-                //     var flyInt = setInterval(function(){
-                    //         parseInt(window.getComputedStyle(avatar).getPropertyValue("top"));
-                    //         if((avatar>=6) && (counter<15)){
-                        //             avatar.style.top = (avatarTop-15)+"px";
-                        //         }
-                        //         if(flyCnt>20){
-                            //             clearInterval(flyInt)
-                            //             flying = 0;
-                            //             flyCnt = 0;
-                            //         }
-                            //         flyCnt++;
-                            //     }, 10)
-                            // }
-                            
+   
+                          
                             // function genThorns(){
                                 //     let thL = 1250;
                                 //     let thBot = -350;
