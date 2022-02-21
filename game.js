@@ -2,10 +2,6 @@ var block1 = document.getElementById("block1");
 var block2 = document.getElementById("block2");
 var avatar = document.getElementById("avatar");
 var game = document.getElementById("game")
-var rdmThorns = Math.random()*2;  //random numb b/w 0-3
-//var random = (rdmThorns*100); //random num b/w 0-300 + height of thorns
-// var top3 = (rdmThorns*100);
-var top1 = -175
 var avTop = 355;
 var avBot = 405;
 var avLeft = 400;
@@ -24,8 +20,9 @@ function start(){
     if(collision == false){
         avBot -= grav;
         avTop += grav;
-    
-        if((smV< thL <lgV) && (avRight >= thL+20) && (avTop <= botOfTopThrns+30) ||(smV< thL <lgV) && (avRight >= thL+20) && avBot <= topOfBotThrns +615 ){   
+                          
+        
+        if(avRight>= thL+20 && thL > avLeft && avTop <= botOfTopThrns+30 || thL > avLeft && avRight >= thL+20 && avBot <= topOfBotThrns +615 ){   
             grav = 0;
             gameOver();
             collision == true;
@@ -35,9 +32,8 @@ function start(){
             gameOver();
             collision == true;
             }
-        else{ 
-            collision == false;
-            //add count
+        else{
+            collision == false 
         }
 
         avatar.style.bottom = avBot + "px";
@@ -48,43 +44,25 @@ function start(){
         block1.style.bottom = botOfTopThrns + "px";
         block2.style.top = topOfBotThrns + "px";
         updateThL();
-        updateSmV();
-        updateLgV();
+        // updateSmV();
+        // updateLgV();
     }
 }
 let timerId = setInterval(start, 20)
 
-block1.addEventListener('animationiteration', () => {
-    block1.style.top = (top1) + "px"; 
-});
-
-block2.addEventListener('animationiteration', () => {
-    block2.style.top = (100 -top1) + "px"; 
-});
-
-function updateSmV(){
-    smV -= 2.83;
-}
-
-function updateLgV(){
-    lgV -= 2.83;
-}
-
 function updateThL(){
     thL -= 2.83;
+    if(thL = 0)
+        thL = 850; 
 }
 
-function control(e){
-    if(e.keycode === 32){
-        flying();
-    } 
-}
 function fly(){
     if(avBot<=700){
         avBot += 30;
         avTop -= 30;
         avatar.style.bottom = avBot + "px";
     }
+    console.log("thornsL " + thL)
 }
 document.addEventListener('keydown', fly)
 
@@ -94,8 +72,6 @@ function gameOver(){
     block2.style.animationPlayState = running1 === 'running' ? 'paused' : 'running';
 
     console.log("GAMEOVER")
-    //display count
-    //option for replay
 }
    
                           
