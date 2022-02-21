@@ -22,7 +22,7 @@ function start(){
         avTop += grav;
                           
         
-        if(avRight>= thL+20 && thL > avLeft && avTop <= botOfTopThrns+30 || thL > avLeft && avRight >= thL+20 && avBot <= topOfBotThrns +615 ){   
+        if(avRight>= thL+20 && thL+132 > avLeft-20 && avTop <= botOfTopThrns+30 || thL+132 > avLeft && avRight >= thL+20 && avBot <= topOfBotThrns +615 ){   
             grav = 0;
             gameOver();
             collision == true;
@@ -32,8 +32,8 @@ function start(){
             gameOver();
             collision == true;
             }
-        else{
-            collision == false 
+        if(thL+132 >= avLeft){
+            collision == false;         
         }
 
         avatar.style.bottom = avBot + "px";
@@ -52,7 +52,7 @@ let timerId = setInterval(start, 20)
 
 function updateThL(){
     thL -= 2.83;
-    if(thL = 0)
+    if(thL <= 0)
         thL = 850; 
 }
 
