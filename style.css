@@ -59,8 +59,20 @@ body{
     font-size: 25px; font-weight: bold;
     letter-spacing: .5em;
     position: absolute;
-    top: 225px;
-    right: 350px;
+    top: 175px;
+    right: 275px;
+}
+#gameover{
+    width: 400px;
+    height: 100px;
+    background-color: rgb(129, 57, 151);
+    font-size: 25px;
+    padding-top: 35px;
+    text-align: center;
+    font-weight: bold;
+    position: absolute;
+    top: 275px;
+    right: 63px;
 }
 #title{
     font-size: 42px; font-weight: bold;
@@ -71,7 +83,7 @@ body{
 }
 .btn{
     position: absolute;
-    top:355px;
+    top:450px;
     right: 169px;
     background-color: palevioletred;
     width: 175px;
