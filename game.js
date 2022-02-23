@@ -10,12 +10,10 @@ var grav = 1.5;
 var thL = 850; 
 var botOfTopThrns = 200;
 var topOfBotThrns = -150;
-var smV = 267;
-var lgV = 533;
 var collision = false;
 const running = block1.style.animationPlayState || 'running';
 const running1 = block2.style.animationPlayState || 'running';
-let c = 0   
+var count = 0   
 
 function start(){
     if(collision == false){
@@ -23,15 +21,10 @@ function start(){
         avTop += grav;
                           
         if(avRight>= thL+20 && thL+132 > avLeft+50 && avTop <= botOfTopThrns+30 || thL+132 > avLeft+50 && avRight >= thL+20 && avBot <= topOfBotThrns +615 ){   
-            grav = 0;
             gameOver();
-            collision === true;
-            thL += 100
         }
             else if (avBot <= 155){
-            grav = 0;
             gameOver();
-            collision == true;
             }
         if(thL < avRight){
             collision == false;
@@ -53,8 +46,8 @@ function updateThL(){
     thL -= 2.83;
     if(thL <= 0){
         thL = 850;
-        c += 1
-        document.getElementById("score").innerHTML= "Score: " + c
+        count += 1
+        document.getElementById("score").innerHTML= "Score: " + count
     } 
 }
 
@@ -68,6 +61,9 @@ function fly(){
 document.addEventListener('keydown', fly)
 
 function gameOver(){
+    grav = 0;
+    collision == true;
+    thL += 100;
     block1.style.animationPlayState = running === 'running' ? 'paused' : 'running';
     block2.style.animationPlayState = running1 === 'running' ? 'paused' : 'running';
     document.getElementById("gameover").innerHTML = "GAMEOVER! Another Round? You'll do better next time."
